@@ -1,7 +1,9 @@
 import express from "express"
-import dotenv from 'dotenv'
+
 import dbConnect from "./utils/dbConnect.js"
 import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
+dotenv.config();
 
 
 const app=express();
