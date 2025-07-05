@@ -7,6 +7,7 @@ import cors from "cors"
 
 
 import userRoutes from "./routes/User.js"
+import messageRoutes from "./routes/Message.js"
 dotenv.config();
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(
 	})
 )
 app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/message", messageRoutes);
 
 
 

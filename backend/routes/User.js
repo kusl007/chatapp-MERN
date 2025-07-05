@@ -7,7 +7,7 @@ import  {
   login,
   signup,
   logout
-} from "../controllers/Auth.js"
+} from "../controllers/AuthController.js"
 
 
 
