@@ -6,7 +6,8 @@ export const sendMessage =async(req,res)=>{
 try {
     const {messages} = req.body;
     const {id:reciverId} = req.params;
-    const senderId = req.user._id;
+    const senderId = req.user.id;
+    console.log("the receivwe id is ",reciverId);
 
 
     let chats = await Conversation.findOne({
@@ -27,7 +28,7 @@ try {
     })
 
     if(newMessages){
-        chats.messages.push(newMessages._id);
+        chats.messages.push( newMessages._id);
     }
 
     await Promise.all([chats.save(),newMessages.save()]);
