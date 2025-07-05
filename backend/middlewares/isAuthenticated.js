@@ -35,7 +35,7 @@ export const isAdmin = async (req, res, next) => {
   try {
     const userDetails = await User.findOne({ email: req.user.email });
 
-    if (userDetails.accountType !== "admin") {
+    if (userDetails.role !== "admin") {
       return res.status(401).json({
         success: false,
         message: "This is a Protected Route for Admin",
@@ -53,9 +53,9 @@ export const isAgent = async (req, res, next) => {
     const userDetails = await User.findOne({ email: req.user.email });
     console.log(userDetails);
 
-    console.log(userDetails.accountType);
+    console.log(userDetails.role);
 
-    if (userDetails.accountType !== "agent") {
+    if (userDetails.role !== "agent") {
       return res.status(401).json({
         success: false,
         message: "This is a Protected Route for Agent",
