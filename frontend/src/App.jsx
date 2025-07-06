@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import AuthPage from './pages/AuthPage';
 import Home from './pages/Home';
 import { VerifyUser } from './utils /VerifyUser';
+import Profile from './pages/profile';
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route element={<VerifyUser/>}>
         <Route path="/" element={<Home/>}/>
+        <Route path="/profile" element={<Profile />} />
+ 
         </Route>
 
       </Routes>

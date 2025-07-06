@@ -18,8 +18,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:"http://localhost:5173",
-		credentials:true,
+		origin:["http://localhost:5173","https://ea1d-110-44-115-197.ngrok-free.app"],
+		credentials: true,
+
 	})
 )
 app.use("/api/v1/auth", authRoutes);

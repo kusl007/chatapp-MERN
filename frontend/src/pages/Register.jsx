@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useAuth } from "../context/AuthContext";
+import axiosInstance from '../api/axiosInstance'; 
+
 
 export default function Register() {
   const navigate = useNavigate();
@@ -70,7 +72,8 @@ export default function Register() {
 
     setLoading(true);
     try {
-      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, inputData);
+      const res = await axiosInstance.post('/auth/signup', inputData);
+
       const data = res.data;
 
       if (data.success === false) {

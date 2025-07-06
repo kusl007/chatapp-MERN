@@ -2,7 +2,9 @@ import jwt from "jsonwebtoken";
 
 export const isAuthenticated = async (req, res, next) => {
   try {
+    console.log("i reached middleware")
     const token = req.cookies.jwt;
+    console.log("the token is ",token)
     if (!token)
       return res
         .status(500)
