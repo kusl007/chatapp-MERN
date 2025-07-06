@@ -6,8 +6,9 @@ import dotenv from "dotenv";
 import cors from "cors"
 
 
-import userRoutes from "./routes/User.js"
+import authRoutes from "./routes/Auth.js"
 import messageRoutes from "./routes/Message.js"
+import userRoutes from "./routes/User.js"
 dotenv.config();
 
 const app = express();
@@ -21,8 +22,9 @@ app.use(
 		credentials:true,
 	})
 )
-app.use("/api/v1/auth", userRoutes);
+app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/message", messageRoutes);
+app.use("/api/v1/user", userRoutes);
 
 
 
